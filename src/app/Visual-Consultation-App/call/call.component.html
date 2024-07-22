@@ -1,0 +1,45 @@
+<!-- <div>
+  <video id="localVideo" autoplay muted></video>
+  <video id="remoteVideo" autoplay></video>
+  <div>
+    <button (click)="startCall(room)">Start Call</button>
+    <button (click)="toggleVideo()">Toggle Video</button>
+    <button (click)="toggleAudio()">Toggle Audio</button>
+    <button (click)="endCall()">End Call</button>
+    <button (click)="copyLink()">Copy Link</button>
+  </div>
+</div> -->
+<div class="call-container">
+  <div class="video-container">
+    <video id="remoteVideo" autoplay playsinline></video>
+    <video
+      id="localVideo"
+      autoplay
+      muted
+      playsinline
+      class="local-video"
+    ></video>
+  </div>
+  <div class="controls">
+    <button class="control-button" (click)="toggleVideo()">
+      <i class="fas fa-video"></i>
+      <span>Video On/Off</span>
+    </button>
+    <button class="control-button" (click)="toggleAudio()">
+      <i class="fas fa-microphone"></i>
+      <span>Mic On/Off</span>
+    </button>
+    <button class="control-button" (click)="takeScreenshot()">
+      <i class="fas fa-camera"></i>
+      <span>Screenshot</span>
+    </button>
+    <button class="control-button" (click)="endCall()">
+      <i class="fas fa-phone-slash"></i>
+      <span>End Call</span>
+    </button>
+  </div>
+  <div class="call-link">
+    <p>Share this link to join the call:</p>
+    <a [href]="getCallLink()">{{ getCallLink() }}</a>
+  </div>
+</div>
